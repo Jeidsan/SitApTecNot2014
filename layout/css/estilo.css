@@ -9,6 +9,7 @@ body
 }
 
 /*Esse média é utilizado para ver qual midia está sento utilizada. Que bacana, cara!*/
+/*O nome disso é media query*/
 @media screen and (orientation: portrait)
 {
     /*Vertical - Retrato*/
@@ -21,4 +22,96 @@ body
     /*Horizontal - Paisagem*/
     .paisagem { display: block; }
     .retrato { display: none; }
+}
+
+/*Esta estratégia deixa o site adaptável, pois eu ei qual é a largura da tela na qual estou trabalhando...*/
+@media screen and (min-width: 1280px)
+{
+    /*Largura minima 1280px*/
+    section
+    {
+        display: block;
+        margin: 0 auto; /*centralização*/
+        width: 1230px;
+        border: 2px white solid; /*Só para debugar*/
+        padding: 50px;        
+    }
+
+    figure
+    {
+        width: 390px;
+        height: 300px;
+        float: left; /*Flutuar, fica uma ao lado da outra*/
+        border: 2px white solid;
+        margin: 5px;
+    }          
+}
+
+@media screen and (min-width: 800px) and (max-width: 1279px)
+{
+    /*Largura minima 800px e máximo 1279px*/
+    section
+    {
+        display: block;
+        margin: 0 auto; /*centralização*/
+        width: 790px;
+        border: 2px chartreuse solid; /*Só para debugar*/
+        padding: 50px;        
+    }
+
+    figure
+    {
+        width: 375px;
+        height: 280px;
+        float: left; /*Flutuar, fica uma ao lado da outra*/
+        border: 2px chartreuse solid;
+        margin: 5px;
+    }
+}
+
+@media screen and (max-width: 799px)
+{
+    /*Largura minima 640px*/
+    section
+    {
+        display: block;
+        margin: 0 auto; /*centralização*/
+        width: 630px;
+        border: 2px yellow solid; /*Só para debugar*/
+        padding: 50px;        
+    }
+
+    figure
+    {
+        width: 600px;
+        height: auto;
+        float: left; /*Flutuar, fica uma ao lado da outra*/
+        border: 2px yellow solid;
+        margin: 5px;
+    }
+}
+
+.fimFloat {
+    clear: both;/*Limpa a flutuação*/
+}
+
+
+/*Essa parte aqui está responsiva, pois responde ao tamanho. Em geral os CSS's responsivos trabalhan com percentuais.'*/
+img
+{
+    width: 95%; /*Em relação a figure*/
+    height: 95%;
+    display: block;
+    margin: 2.5% auto; /*centralização*/        
+}
+
+figcaption
+{
+    background-color: rgba(240,240,240,0.4);
+    height: 30px;
+    position: relative;
+    bottom: 42.5px;
+    text-align: center;
+    width: 95%;
+    margin: 0 auto;
 }

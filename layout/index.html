@@ -4,16 +4,134 @@
         <title>Website didático - Responsivo e adaptável</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
-        <link href="css/estilo.css" rel="stylesheet" type="text/css" />
+        <link href="css/estilo.css" rel="stylesheet" type="text/css" media="screen"/>
+        <link href="css/print.css" rel="stylesheet" type="text/css" media="print"/>
     </head>
     <body>
-        <header>
+        <header> <!-- Funciona como uma div só que semântica -->
             <h1>Website didático - Responsivo e adaptável</h1>
             <h2>Detecção de medidas</h2>
-            <p class="paisagem">Horizontal - Paisagem</p>
-            <p class="retrato">Vertical - Retrato</p>
-            <p>Largura da tela: <span id="largura"></span><br />Altura da tela: <span id="altura"></span></p>
+            <p class="paisagem naoImprime">Horizontal - Paisagem</p>
+            <p class="retrato naoImprime">Vertical - Retrato</p>
+            <p class="naoImprime">Largura da tela: <span id="largura"></span><br />Altura da tela: <span id="altura"></span></p>
             <script src="js/medidas.js"></script>
         </header>
+        <section>
+            <h1>Eleições 2014</h1>            
+            <h2>Fotos da Situação</h2>
+            <figure>
+                <img src="http://vocacional.com.br/theoffice/wp-content/uploads/2014/09/Dilma-2.jpg" alt="Dilma 1" title="Dilma 1" />
+                <figcaption>
+                    <a href="http://vocacional.com.br/theoffice/wp-content/uploads/2014/09/Dilma-2.jpg" >Dilma 1</a>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="http://veja1.abrilm.com.br/assets/images/2013/12/194070/Dilma-Rousseff-2013-02-size-598.jpg" alt="Dilma 2" title="Dilma 2" />
+                <figcaption>
+                    <a href="http://veja1.abrilm.com.br/assets/images/2013/12/194070/Dilma-Rousseff-2013-02-size-598.jpg" >Dilma 2</a>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="http://bahiareconcavo.com.br/site/wp-content/uploads/dilma-roussef.jpg" alt="Dilma 3" title="Dilma 3" />
+                <figcaption>
+                    <a href="http://bahiareconcavo.com.br/site/wp-content/uploads/dilma-roussef.jpg" >Dilma 3</a>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="http://4.bp.blogspot.com/_KqeABmyc6Mk/S8fDa0cvq_I/AAAAAAAAAjE/zSLo7bAY1Ks/s1600/dilma-rousseff%5B1%5D.jpg" alt="Dilma 4" title="Dilma 4" />
+                <figcaption>
+                    <a href="http://4.bp.blogspot.com/_KqeABmyc6Mk/S8fDa0cvq_I/AAAAAAAAAjE/zSLo7bAY1Ks/s1600/dilma-rousseff%5B1%5D.jpg">Dilma 4</a>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="http://goias24horas.com.br/wp-content/uploads/2013/05/dilma-rousseff-620x450.jpg" alt="Dilma 5" title="Dilma 5" />
+                <figcaption>
+                    <a href="http://goias24horas.com.br/wp-content/uploads/2013/05/dilma-rousseff-620x450.jpg">Dilma 5</a>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="http://www.estadao.com.br/fotos/dilmaok.jpg" alt="Dilma 6" title="Dilma 6" />
+                <figcaption>
+                    <a href="http://www.estadao.com.br/fotos/dilmaok.jpg">Dilma 6</a>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="http://extra.globo.com/incoming/8774156-9b8-42a/w640h360-PROP/dilma-bolada-1.jpg" alt="Dilma 7" title="Dilma 7" />
+                <figcaption>
+                    <a href="http://extra.globo.com/incoming/8774156-9b8-42a/w640h360-PROP/dilma-bolada-1.jpg">Dilma 7</a>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="http://i1.r7.com/data/files/2C92/948B/23ED/5A67/0123/ED9B/6655/1D00/dilma-rousseff-hg-20090924.jpg" alt="Dilma 8" title="Dilma 8" />
+                <figcaption>
+                    <a href="http://i1.r7.com/data/files/2C92/948B/23ED/5A67/0123/ED9B/6655/1D00/dilma-rousseff-hg-20090924.jpg">Dilma 8</a>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="http://noticias.r7.com/blogs/o-provocador/files/2010/04/dilma-rousseff.JPG" alt="Dilma 9" title="Dilma 9" />
+                <figcaption>
+                    <a href="http://noticias.r7.com/blogs/o-provocador/files/2010/04/dilma-rousseff.JPG">Dilma 9</a>
+                </figcaption>
+            </figure>
+            <!--Final Situação -->
+            
+            <br class="fimFloat" />
+            <h2>Fotos da Oposição</h2>
+            <figure>
+                <img src="http://veja.abril.com.br/blog/radar-on-line/files/2014/01/a%C3%A9cio.jpg" alt="Aécio 1" title="Aécio 1" />
+                <figcaption>
+                    <a href="http://veja.abril.com.br/blog/radar-on-line/files/2014/01/a%C3%A9cio.jpg">Aécio 1</a>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="http://4.bp.blogspot.com/-_OEOIcYIeBI/UK5AQbNY5ZI/AAAAAAAAA7U/gIoR0O8nkU4/s400/aecio-neves2.jpg" alt="Aécio 2" title="Aécio 2" />
+                <figcaption>
+                    <a href="http://4.bp.blogspot.com/-_OEOIcYIeBI/UK5AQbNY5ZI/AAAAAAAAA7U/gIoR0O8nkU4/s400/aecio-neves2.jpg" >Aécio 2</a>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="http://4.bp.blogspot.com/--C5SOibBhVc/UHLSrgFvsHI/AAAAAAAAAdM/3-w7DK1NMo0/s1600/A%C3%A9cio+Neves.jpg" alt="Aécio 3" title="Aécio 3" />
+                <figcaption>
+                    <a href="http://4.bp.blogspot.com/--C5SOibBhVc/UHLSrgFvsHI/AAAAAAAAAdM/3-w7DK1NMo0/s1600/A%C3%A9cio+Neves.jpg" >Aécio 3</a>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="http://i1.r7.com/data/files/2C92/94A4/258F/B52D/0125/9EAF/1E60/5ABA/aecio-entrevista-g-20091217.jpg" alt="Aécio 4" title="Aécio 4" />
+                <figcaption>
+                    <a href="http://i1.r7.com/data/files/2C92/94A4/258F/B52D/0125/9EAF/1E60/5ABA/aecio-entrevista-g-20091217.jpg" >Aécio 4</a>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="http://portaleliomar.opovo.com.br/wp-content/uploads/2014/07/aecio-neves-blog.jpg" alt="Aécio 5" title="Aécio 5" />
+                <figcaption>
+                    <a href="http://portaleliomar.opovo.com.br/wp-content/uploads/2014/07/aecio-neves-blog.jpg" >Aécio 5</a>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="http://correiodobrasil.com.br/wp-content/uploads/2013/02/aecio-neves.jpg" alt="Aécio 6" title="Aécio 6" />
+                <figcaption>
+                    <a href="http://correiodobrasil.com.br/wp-content/uploads/2013/02/aecio-neves.jpg" >Aécio 6</a>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="http://4.bp.blogspot.com/-Ue68PfwekB8/UO6KCmZfI2I/AAAAAAAAeNE/xsu7tQzo9gc/s1600/A%C3%A9cio-Neves.jpg" alt="Aécio 7" title="Aécio 7" />
+                <figcaption>
+                    <a href="http://4.bp.blogspot.com/-Ue68PfwekB8/UO6KCmZfI2I/AAAAAAAAeNE/xsu7tQzo9gc/s1600/A%C3%A9cio-Neves.jpg" >Aécio 7</a>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="http://lulacerda.ig.com.br/wp-content/uploads/2013/10/aecio.1.jpg" alt="Aécio 8" title="Aécio 8" />
+                <figcaption>
+                    <a href="http://lulacerda.ig.com.br/wp-content/uploads/2013/10/aecio.1.jpg">Aécio 8</a>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="http://1.bp.blogspot.com/-ITMjTB7yKPA/UHfnw2WhjLI/AAAAAAAAVgs/eRhcJkoZBbg/s1600/A%25C3%25A9cio+Neves.jpg" alt="Aécio 9" title="Aécio 9" />
+                <figcaption>
+                    <a href="http://1.bp.blogspot.com/-ITMjTB7yKPA/UHfnw2WhjLI/AAAAAAAAVgs/eRhcJkoZBbg/s1600/A%25C3%25A9cio+Neves.jpg" >Aécio 9</a>
+                </figcaption>
+            </figure>            
+            <br class="fimFloat" />
+        </section>        
     </body>
 </html>
