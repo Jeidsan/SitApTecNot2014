@@ -8,22 +8,22 @@
 class Usuario extends CI_Controller {
 
     function index() {
-        $this->get();
+        $this->get();        
     }
 
     public function get($idusuario = NULL) {
-        if ($idusuario != null) {
+        if ($idusuario != null) {            
             $this->load->model('usuario_model');
             $data['usuario'] = $this->usuario_model->get($idusuario);
             $this->load->view('usuario_view', $data);
-        } else {
+        } else {            
             $this->load->model('usuario_model');
             $data['usuarios'] = $this->usuario_model->get();
             $this->load->view('listaUsuario_view', $data);
         }
     }
 
-    public function update() {
+    public function update() {        
         $this->load->model('usuario_model');
         $idusuario = $this->input->post('idusuario');
         $data = array(
@@ -36,8 +36,8 @@ class Usuario extends CI_Controller {
         $this->index();
     }
 
-    public function delete($idusuario) {
+    public function delete($idusuario) {    
         $this->load->model('usuario_model');
         $this->usuario_model->delete($idusuario);
-    }
+    }       
 }
