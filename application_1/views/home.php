@@ -5,26 +5,25 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
+	<head>                     
 		<title>Prologue by HTML5 UP</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-                
-		<!--[if lte IE 8]><script src="<?php echo base_url('assets/css/ie/html5shiv.js'); ?>"></script><![endif]-->
-		<script src="<?php echo base_url('assets/js/jquery.min.js'); ?>"></script>
-		<script src="<?php echo base_url('assets/js/jquery.scrolly.min.js'); ?>"></script>
-		<script src="<?php echo base_url('assets/js/jquery.scrollzer.min.js'); ?>"></script>
-		<script src="<?php echo base_url('assets/js/skel.min.js'); ?>"></script>
-		<script src="<?php echo base_url('assets/js/skel-layers.min.js'); ?>"></script>
-		<script src="<?php echo base_url('assets/js/init.js'); ?>"></script>
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="<?php echo base_url('assets/js/jquery.min.js')?>"></script>
+		<script src="<?php echo base_url('assets/js/jquery.scrolly.min.js')?>"></script>
+		<script src="<?php echo base_url('assets/js/jquery.scrollzer.min.js')?>"></script>
+		<script src="<?php echo base_url('assets/js/skel.min.js')?>"></script>
+		<script src="<?php echo base_url('assets/js/skel-layers.min.js')?>"></script>
+		<script src="<?php echo base_url('assets/js/init.js')?>"></script>
 		<noscript>
-			<link rel="stylesheet" href="<?php echo base_url('assets/css/skel.css'); ?>" />
-			<link rel="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>" />
-			<link rel="stylesheet" href="<?php echo base_url('assets/css/style-wide.css'); ?>" />
+			<link rel="stylesheet" href="<?php echo base_url('assets/css/skel.css')?>" />
+			<link rel="stylesheet" href="<?php echo base_url('assets/css/style.css')?>" />
+                        <link rel="stylesheet" href="<?php echo base_url('assets/css/style-wide.css')?>" />
 		</noscript>
-		<!--[if lte IE 9]><link rel="stylesheet" href="<?php echo base_url('assets/css/ie/v9.css'); ?>" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="<?php echo base_url('assets/css/ie/v8.css'); ?>" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
 	<body>
 
@@ -35,7 +34,7 @@
 
 					<!-- Logo -->
 						<div id="logo">
-							<span class="image avatar48"><img src="<?php echo base_url('assets/images/avatar.jpg'); ?>" alt="" /></span>
+							<span class="image avatar48"><img src="<?php echo base_url('assets/images/avatar.jpg')?>" alt="" /></span>
 							<h1 id="title">Jane Doe</h1>
 							<p>Hyperspace Engineer</p>
 						</div>
@@ -117,13 +116,13 @@
 							<div class="row">
 								<div class="4u">
 									<article class="item">
-										<a href="#" class="image fit"><img src="<?php echo base_url('assets/images/pic02.jpg'); ?>" alt="" /></a>
+										<a href="#" class="image fit"><img src="<?php echo base_url('assets/images/pic02.jpg')?>" alt="" /></a>
 										<header>
 											<h3>Ipsum Feugiat</h3>
 										</header>
 									</article>
 									<article class="item">
-										<a href="#" class="image fit"><img src="<?php echo base_url('assets/images/pic03.jpg'); ?>" alt="" /></a>
+										<a href="#" class="image fit"><img src="<?php echo base_url('assets/images/pic03.jpg')?>" alt="" /></a>
 										<header>
 											<h3>Rhoncus Semper</h3>
 										</header>
@@ -131,13 +130,13 @@
 								</div>
 								<div class="4u">
 									<article class="item">
-										<a href="#" class="image fit"><img src="<?php echo base_url('assets/images/pic04.jpg'); ?>" alt="" /></a>
+										<a href="#" class="image fit"><img src="<?php echo base_url('assets/images/pic04.jpg')?>" alt="" /></a>
 										<header>
 											<h3>Magna Nullam</h3>
 										</header>
 									</article>
 									<article class="item">
-										<a href="#" class="image fit"><img src="<?php echo base_url('assets/images/pic05.jpg'); ?>" alt="" /></a>
+										<a href="#" class="image fit"><img src="<?php echo base_url('assets/images/pic05.jpg')?>" alt="" /></a>
 										<header>
 											<h3>Natoque Vitae</h3>
 										</header>
@@ -145,13 +144,13 @@
 								</div>
 								<div class="4u">
 									<article class="item">
-										<a href="#" class="image fit"><img src="<?php echo base_url('assets/images/pic06.jpg'); ?>" alt="" /></a>
+										<a href="#" class="image fit"><img src="<?php echo base_url('assets/images/pic06.jpg')?>" alt="" /></a>
 										<header>
 											<h3>Dolor Penatibus</h3>
 										</header>
 									</article>
 									<article class="item">
-										<a href="#" class="image fit"><img src="<?php echo base_url('assets/images/pic07.jpg'); ?>" alt="" /></a>
+										<a href="#" class="image fit"><img src="<?php echo base_url('assets/images/pic07.jpg')?>" alt="" /></a>
 										<header>
 											<h3>Orci Convallis</h3>
 										</header>
@@ -170,7 +169,7 @@
 								<h2>About Me</h2>
 							</header>
 
-							<a href="#" class="image featured"><img src="<?php echo base_url('assets/images/pic08.jpg'); ?>" alt="" /></a>
+							<a href="#" class="image featured"><img src="<?php echo base_url('assets/images/pic08.jpg')?>" alt="" /></a>
 							
 							<p>Tincidunt eu elit diam magnis pretium accumsan etiam id urna. Ridiculus 
 							ultricies curae quis et rhoncus velit. Lobortis elementum aliquet nec vitae 
