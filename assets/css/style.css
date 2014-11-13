@@ -12,6 +12,11 @@
 /* Basic                                                                         */
 /*********************************************************************************/
 
+        .error
+        {
+            font-size: 50%;
+            color: red;
+        }
 	body
 	{
 		background: #fff;
@@ -782,4 +787,4 @@
 			#main > section.four
 			{
 				background-color: #e8edec;
-			}
+			}                                                

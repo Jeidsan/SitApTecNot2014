@@ -21,7 +21,9 @@ class Usuarios extends CI_Controller {
         /**
          * Carrega a view
          */
-        $this->load->view('usuarios_view.php', $data);
+        $this->load->view('home-header');
+        $this->load->view('home', $data);
+        $this->load->view('home-footer');        
     }
 
     public function info() {
@@ -99,7 +101,9 @@ class Usuarios extends CI_Controller {
          */
 
         /* Carrega a página de edição com os dados da usuario */
-        $this->load->view('usuarios_edit', $data);
+        $this->load->view('home-header');
+        $this->load->view('home-edit', $data);
+        $this->load->view('home-footer'); 
     }
 
     function atualizar() {

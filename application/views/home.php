@@ -1,231 +1,195 @@
-<!DOCTYPE HTML>
-<!--
-	Prologue by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Prologue by HTML5 UP</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-                
-		<!--[if lte IE 8]><script src="<?php echo base_url('assets/css/ie/html5shiv.js'); ?>"></script><![endif]-->
-		<script src="<?php echo base_url('assets/js/jquery.min.js'); ?>"></script>
-		<script src="<?php echo base_url('assets/js/jquery.scrolly.min.js'); ?>"></script>
-		<script src="<?php echo base_url('assets/js/jquery.scrollzer.min.js'); ?>"></script>
-		<script src="<?php echo base_url('assets/js/skel.min.js'); ?>"></script>
-		<script src="<?php echo base_url('assets/js/skel-layers.min.js'); ?>"></script>
-		<script src="<?php echo base_url('assets/js/init.js'); ?>"></script>
-		<noscript>
-			<link rel="stylesheet" href="<?php echo base_url('assets/css/skel.css'); ?>" />
-			<link rel="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>" />
-			<link rel="stylesheet" href="<?php echo base_url('assets/css/style-wide.css'); ?>" />
-		</noscript>
-		<!--[if lte IE 9]><link rel="stylesheet" href="<?php echo base_url('assets/css/ie/v9.css'); ?>" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="<?php echo base_url('assets/css/ie/v8.css'); ?>" /><![endif]-->
-	</head>
-	<body>
+<!-- Main -->
+<div id="main">
 
-		<!-- Header -->
-			<div id="header" class="skel-layers-fixed">
+    <!-- Intro -->
+    <section id="top" class="one dark cover">
+        <div class="container">
 
-				<div class="top">
+            <header>
+                <h2 class="alt">Hi! I'm <strong>Prologue</strong>, a <a href="http://html5up.net/license">free</a> responsive<br />
+                    site template designed by <a href="http://html5up.net">HTML5 UP</a>.</h2>
+                <p>Ligula scelerisque justo sem accumsan diam quis<br />
+                    vitae natoque dictum sollicitudin elementum.</p>
+            </header>
 
-					<!-- Logo -->
-						<div id="logo">
-							<span class="image avatar48"><img src="<?php echo base_url('assets/images/avatar.jpg'); ?>" alt="" /></span>
-							<h1 id="title">Jane Doe</h1>
-							<p>Hyperspace Engineer</p>
-						</div>
+            <footer>
+                <a href="#portfolio" class="button scrolly">Magna Aliquam</a>
+            </footer>
 
-					<!-- Nav -->
-						<nav id="nav">
-							<!--
-							
-								Prologue's nav expects links in one of two formats:
-								
-								1. Hash link (scrolls to a different section within the page)
-								
-								   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
+        </div>
+    </section>
 
-								2. Standard link (sends the user to another page/site)
+    <!-- Portfolio -->
+    <section id="portfolio" class="two">
+        <div class="container">
 
-								   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
-							
-							-->
-							<ul>
-								<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Intro</span></a></li>
-								<li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Portfolio</span></a></li>
-								<li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">About Me</span></a></li>
-								<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
-							</ul>
-						</nav>
-						
-				</div>
-				
-				<div class="bottom">
+            <header>
+                <h2>Portfolio</h2>
+            </header>
 
-					<!-- Social Icons -->
-						<ul class="icons">
-							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-							<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
-				
-				</div>
-			
-			</div>
+            <p>Vitae natoque dictum etiam semper magnis enim feugiat convallis convallis
+                egestas rhoncus ridiculus in quis risus amet curabitur tempor orci penatibus.
+                Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis 
+                fusce hendrerit lacus ridiculus.</p>
 
-		<!-- Main -->
-			<div id="main">
+            <div class="row">
+                <div class="4u">
+                    <article class="item">
+                        <a href="#" class="image fit"><img src="<?php echo base_url('assets/images/pic02.jpg'); ?>" alt="" /></a>
+                        <header>
+                            <h3>Ipsum Feugiat</h3>
+                        </header>
+                    </article>
+                    <article class="item">
+                        <a href="#" class="image fit"><img src="<?php echo base_url('assets/images/pic03.jpg'); ?>" alt="" /></a>
+                        <header>
+                            <h3>Rhoncus Semper</h3>
+                        </header>
+                    </article>
+                </div>
+                <div class="4u">
+                    <article class="item">
+                        <a href="#" class="image fit"><img src="<?php echo base_url('assets/images/pic04.jpg'); ?>" alt="" /></a>
+                        <header>
+                            <h3>Magna Nullam</h3>
+                        </header>
+                    </article>
+                    <article class="item">
+                        <a href="#" class="image fit"><img src="<?php echo base_url('assets/images/pic05.jpg'); ?>" alt="" /></a>
+                        <header>
+                            <h3>Natoque Vitae</h3>
+                        </header>
+                    </article>
+                </div>
+                <div class="4u">
+                    <article class="item">
+                        <a href="#" class="image fit"><img src="<?php echo base_url('assets/images/pic06.jpg'); ?>" alt="" /></a>
+                        <header>
+                            <h3>Dolor Penatibus</h3>
+                        </header>
+                    </article>
+                    <article class="item">
+                        <a href="#" class="image fit"><img src="<?php echo base_url('assets/images/pic07.jpg'); ?>" alt="" /></a>
+                        <header>
+                            <h3>Orci Convallis</h3>
+                        </header>
+                    </article>
+                </div>
+            </div>
 
-				<!-- Intro -->
-					<section id="top" class="one dark cover">
-						<div class="container">
+        </div>
+    </section>				
 
-							<header>
-								<h2 class="alt">Hi! I'm <strong>Prologue</strong>, a <a href="http://html5up.net/license">free</a> responsive<br />
-								site template designed by <a href="http://html5up.net">HTML5 UP</a>.</h2>
-								<p>Ligula scelerisque justo sem accumsan diam quis<br />
-								vitae natoque dictum sollicitudin elementum.</p>
-							</header>
-							
-							<footer>
-								<a href="#portfolio" class="button scrolly">Magna Aliquam</a>
-							</footer>
+    <!-- Contact -->
+    <section id="contact" class="three">
+        <div class="container">
 
-						</div>
-					</section>
-					
-				<!-- Portfolio -->
-					<section id="portfolio" class="two">
-						<div class="container">
-					
-							<header>
-								<h2>Portfolio</h2>
-							</header>
-							
-							<p>Vitae natoque dictum etiam semper magnis enim feugiat convallis convallis
-							egestas rhoncus ridiculus in quis risus amet curabitur tempor orci penatibus.
-							Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis 
-							fusce hendrerit lacus ridiculus.</p>
-						
-							<div class="row">
-								<div class="4u">
-									<article class="item">
-										<a href="#" class="image fit"><img src="<?php echo base_url('assets/images/pic02.jpg'); ?>" alt="" /></a>
-										<header>
-											<h3>Ipsum Feugiat</h3>
-										</header>
-									</article>
-									<article class="item">
-										<a href="#" class="image fit"><img src="<?php echo base_url('assets/images/pic03.jpg'); ?>" alt="" /></a>
-										<header>
-											<h3>Rhoncus Semper</h3>
-										</header>
-									</article>
-								</div>
-								<div class="4u">
-									<article class="item">
-										<a href="#" class="image fit"><img src="<?php echo base_url('assets/images/pic04.jpg'); ?>" alt="" /></a>
-										<header>
-											<h3>Magna Nullam</h3>
-										</header>
-									</article>
-									<article class="item">
-										<a href="#" class="image fit"><img src="<?php echo base_url('assets/images/pic05.jpg'); ?>" alt="" /></a>
-										<header>
-											<h3>Natoque Vitae</h3>
-										</header>
-									</article>
-								</div>
-								<div class="4u">
-									<article class="item">
-										<a href="#" class="image fit"><img src="<?php echo base_url('assets/images/pic06.jpg'); ?>" alt="" /></a>
-										<header>
-											<h3>Dolor Penatibus</h3>
-										</header>
-									</article>
-									<article class="item">
-										<a href="#" class="image fit"><img src="<?php echo base_url('assets/images/pic07.jpg'); ?>" alt="" /></a>
-										<header>
-											<h3>Orci Convallis</h3>
-										</header>
-									</article>
-								</div>
-							</div>
+            <header>
+                <h2>Contact</h2>
+            </header>
 
-						</div>
-					</section>
+            <p>Elementum sem parturient nulla quam placerat viverra 
+                mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia 
+                donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc 
+                orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.</p>
 
-				<!-- About Me -->
-					<section id="about" class="three">
-						<div class="container">
+            <form method="post" action="#">
+                <div class="row half">
+                    <div class="6u"><input type="text" name="name" placeholder="Name" /></div>
+                    <div class="6u"><input type="text" name="email" placeholder="Email" /></div>
+                </div>
+                <div class="row half">
+                    <div class="12u">
+                        <textarea name="message" placeholder="Message"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="12u">
+                        <input type="submit" value="Send Message" />
+                    </div>
+                </div>
+            </form>
 
-							<header>
-								<h2>About Me</h2>
-							</header>
+        </div>
+    </section>
 
-							<a href="#" class="image featured"><img src="<?php echo base_url('assets/images/pic08.jpg'); ?>" alt="" /></a>
-							
-							<p>Tincidunt eu elit diam magnis pretium accumsan etiam id urna. Ridiculus 
-							ultricies curae quis et rhoncus velit. Lobortis elementum aliquet nec vitae 
-							laoreet eget cubilia quam non etiam odio tincidunt montes. Elementum sem 
-							parturient nulla quam placerat viverra mauris non cum elit tempus ullamcorper 
-							dolor. Libero rutrum ut lacinia donec curae mus vel quisque sociis nec 
-							ornare iaculis.</p>
+    <!-- Cadastro -->
+    <section id="cadastro" class="four">
+        <div class="container">
 
-						</div>
-					</section>
-			
-				<!-- Contact -->
-					<section id="contact" class="four">
-						<div class="container">
+            <header>
+                <h2>Cadastre-se</h2>
+            </header>
+            <p>Isso só vai levar um minuto.</p>
 
-							<header>
-								<h2>Contact</h2>
-							</header>
+            <?php echo form_open('usuarios/inserir#cadastro', 'id="form-usuarios"'); ?>
 
-							<p>Elementum sem parturient nulla quam placerat viverra 
-							mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia 
-							donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc 
-							orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.</p>
-							
-							<form method="post" action="#">
-								<div class="row half">
-									<div class="6u"><input type="text" name="name" placeholder="Name" /></div>
-									<div class="6u"><input type="text" name="email" placeholder="Email" /></div>
-								</div>
-								<div class="row half">
-									<div class="12u">
-										<textarea name="message" placeholder="Message"></textarea>
-									</div>
-								</div>
-								<div class="row">
-									<div class="12u">
-										<input type="submit" value="Send Message" />
-									</div>
-								</div>
-							</form>
+            <div class="row half">
+                <div class="6u"><input type="text" name="nome" placeholder="Nome"/><div class="error"><?php echo form_error('nome'); ?></div></div>
+                <div class="6u"><input type="text" name="foto" placeholder="Foto"/><div class="error"><?php echo form_error('foto'); ?></div></div>
+            </div>
 
-						</div>
-					</section>
-			
-			</div>
+            <div class="row half">              
+                <div class="6u"><input type="password" name="senha" placeholder="Senha"/><div class="error"><?php echo form_error('senha'); ?></div></div>
+                <div class="6u"><input type="text" name="dtnascimento" placeholder="Data de Nascimento"/><div class="error"><?php echo form_error('dtnascimento'); ?></div></div>
+            </div>                        
 
-		<!-- Footer -->
-			<div id="footer">
-				
-				<!-- Copyright -->
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				
-			</div>
+            <div class="row">              
+                <div class="12u"><input type="text" name="email" placeholder="E-mail"/><div class="error"><?php echo form_error('email'); ?></div></div>                
+            </div>
 
-	</body>
-</html>
+            <div class="row half">              
+                <div class="6u"><input type="text" name="telefone" placeholder="Telefone"/><div class="error"><?php echo form_error('telefone'); ?></div></div>
+                <div class="6u"><input type="text" name="celular" placeholder="Celular"/><div class="error"><?php echo form_error('celular'); ?></div></div>
+            </div>                                                                      
+
+            <div class="row">
+                <div class="12u"><input type="text" name="endereco" placeholder="Endereço"/><div class="error"><?php echo form_error('endereco'); ?></div></div>
+            </div>
+
+            <div class="row half">
+                <div class="6u"><input type="text" name="bairro" placeholder="Bairro"/><div class="error"><?php echo form_error('bairro'); ?></div></div>
+                <div class="6u"><input type="text" name="cep" placeholder="CEP"/><div class="error"><?php echo form_error('cep'); ?></div></div>
+            </div>
+
+            <div class="row half">
+                <div class="6u"><input type="text" name="cidade" placeholder="Cidade"/><div class="error"><?php echo form_error('cidade'); ?></div></div>
+                <div class="6u"><input type="text" name="estado" placeholder="Estado"/><div class="error"><?php echo form_error('estado'); ?></div></div>
+            </div>
+
+            <div class="row">
+                <div class="12u"><input type="submit" name="cadastrar" value="Cadastrar" /></div>
+            </div>
+
+            <?php echo form_close(); ?>
+
+            <!-- Lista as Pessoas Cadastradas -->
+            <div class="row">
+                <?php foreach ($usuarios as $usuario): ?>                
+                    <div class="4u">
+                        <article class="item">
+                            <a href="#" class="image fit"><img src="<?php echo base_url("assets/images/{$usuario->foto}"); ?>" alt="" /></a>
+                            <header>
+                                <h3><a title="Editar" href="<?php echo base_url() . 'usuarios/editar/' . $usuario->idusuario; ?>"><?php echo $usuario->nome; ?></a></h3>
+                            </header>
+                            <!--<p><?php echo $usuario->email; ?></p>
+                            <p><?php echo $usuario->dtNascimento; ?></p>
+                            <p><?php echo $usuario->senha; ?></p>
+                            <p><?php echo $usuario->endereco; ?></p>
+                            <p><?php echo $usuario->cidade; ?></p>
+                            <p><?php echo $usuario->estado; ?></p>
+                            <p><?php echo $usuario->bairro; ?></p>
+                            <p><?php echo $usuario->cep; ?></p>
+                            <p><?php echo $usuario->telefone; ?></p>
+                            <p><?php echo $usuario->celular; ?></p>-->
+                        </article>                                      
+                    </div>
+                <?php endforeach ?>
+            </div>                                                       
+            <!-- Fim Lista -->
+
+
+        </div>
+    </section>
+
+</div>

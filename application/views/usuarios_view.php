@@ -2,8 +2,7 @@
 <html lang="pt-BR">
     <head>
         <title><?php echo $titulo; ?></title>
-        <meta charset="UTF-8" />
-        <link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/css/estilo.css'); ?>"/>
+        <meta charset="UTF-8" />        
     </head>
     <body>
 
