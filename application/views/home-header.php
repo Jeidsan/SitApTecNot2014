@@ -6,7 +6,7 @@
 -->
 <html>
     <head>
-        <title>Prologue by HTML5 UP</title>
+        <title>Portal Contêxtil Ltda.</title>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -37,8 +37,8 @@
                 <!-- Logo -->
                 <div id="logo">
                     <span class="image avatar48"><img src="<?php echo base_url('assets/images/avatar.jpg'); ?>" alt="" /></span>
-                    <h1 id="title">Jane Doe</h1>
-                    <p>Hyperspace Engineer</p>
+                    <h1 id="title">Portal Contêxtil</h1>
+                    <p>Contêxtil Ltda.</p>
                 </div>
 
                 <!-- Nav -->
@@ -57,27 +57,41 @@
                     
                     -->
                     <ul>
-                        <li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Início</span></a></li>
-                        <li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Notícias</span></a></li>								
-                        <li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contato</span></a></li>
-                        <li><a href="#cadastro" id="cadastro-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Cadastre-se</span></a></li>
-                    </ul>
-                </nav>
+                        <li><a href="<?php echo base_url('#top'); ?>" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Início</span></a></li>
+                        <li><a href="<?php echo base_url('#portfolio'); ?>" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Notícias</span></a></li>								
+                        <li><a href="<?php echo base_url('#contact'); ?>" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contato</span></a></li>                        
+                        <?php
+                        if($this->session->userdata('logado') === FALSE)
+                        {                            
+                            echo '<li><a href="'.  base_url('usuarios/novo'). '" id="cadastro-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Cadastre-se</span></a></li>';
+                            echo '<li><a href="'.  base_url('login').'" id="login-link" class="skel-layers-ignoreHref"><span class="icon fa-sign-in">Acesse</span></a></li>';
+                        }
+                        else
+                        {                            
+                            echo '<li><a href="'. base_url('usuarios') .'" id="cadastro-link" class="skel-layers-ignoreHref"><span class="icon fa-users">Usuários</span></a></li>';                            
+                            echo '<li><a href="'. base_url('login/sair') .'" id="login-link" class="skel-layers-ignoreHref"><span class="icon fa-sign-out">Sair</span></a></li>';
+                        }
+                        ?>
 
-            </div>
 
-            <div class="bottom">
 
-                <!-- Social Icons -->
-                <ul class="icons">
-                    <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                    <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                    <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-                    <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-                    <li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
-                </ul>
+                        </ul>
+                        </nav>
 
-            </div>
+                        </div>
 
-        </div>
+                        <div class = "bottom">
+
+                        <!--Social Icons -->
+                        <ul class = "icons">
+                        <li><a href = "#" class = "icon fa-twitter"><span class = "label">Twitter</span></a></li>
+                        <li><a href = "#" class = "icon fa-facebook"><span class = "label">Facebook</span></a></li>
+                        <li><a href = "#" class = "icon fa-github"><span class = "label">Github</span></a></li>
+                        <li><a href = "#" class = "icon fa-dribbble"><span class = "label">Dribbble</span></a></li>
+                        <li><a href = "#" class = "icon fa-envelope"><span class = "label">Email</span></a></li>
+                        </ul>
+
+                        </div>
+
+                        </div>
 

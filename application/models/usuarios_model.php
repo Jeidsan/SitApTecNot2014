@@ -10,7 +10,11 @@ class Usuarios_model extends CI_Model {
     }
 
     function inserir($data) {
-        return $this->db->insert('usuario', $data);
+        if ($this->db->insert('usuario', $data)) {
+            return TRUE;//$this->db->last_insert();
+        } else {
+            return FALSE;
+        }
     }
 
     function listar() {
@@ -18,9 +22,23 @@ class Usuarios_model extends CI_Model {
         return $query->result();
     }
 
-    function editar($idusuario) {
+    /* function editar($idusuario) {
+      $this->db->where('idusuario', $idusuario);
+      $query = $this->db->get('usuario');
+      return $query->result();
+      } */
+
+    function get($idusuario) {
         $this->db->where('idusuario', $idusuario);
         $query = $this->db->get('usuario');
+        return $query->result();
+    }
+
+    function login($email, $senha) {        
+        $this->db->like('email', $email);
+        $this->db->where('senha', $senha);
+        $this->db->limit(1);
+        $query = $this->db->get('usuario');        
         return $query->result();
     }
 

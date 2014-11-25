@@ -25,6 +25,7 @@ class Welcome extends CI_Controller {
          * Lista todos os registros da tabela pesssoas
          */
         $data['usuarios'] = $this->usuarios_model->listar();
+        $data['noticias'] = $this->noticia_model->listar();
         
         $this->load->view('home-header');
         $this->load->view('home', $data);
@@ -33,7 +34,9 @@ class Welcome extends CI_Controller {
 
     function __construct() {
         parent::__construct();
+        //Carrega os modelos...
         $this->load->model('usuarios_model');
+        $this->load->model('noticia_model');
         //Definir o timezone - Fuso Horário
         date_default_timezone_set('America/Sao_Paulo');
     }

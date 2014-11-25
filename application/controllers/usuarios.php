@@ -13,17 +13,22 @@ class Usuarios extends CI_Controller {
     }
 
     function index() {
-        $data['titulo'] = "CRUD com CodeIgniter | Cadastro de Usuários";
-        /**
-         * Lista todos os registros da tabela pesssoas
-         */
+
+        if ($this->session->userdata['logado'] == FALSE) {
+            redirect(base_url());
+        } else {
+            $this->listar();
+        }
+    }
+
+    function listar() {
+        //Busca os usuários
         $data['usuarios'] = $this->usuarios_model->listar();
-        /**
-         * Carrega a view
-         */
+
+        //Carrega as views
         $this->load->view('home-header');
-        $this->load->view('home', $data);
-        $this->load->view('home-footer');        
+        $this->load->view('usuarios_lista', $data);
+        $this->load->view('home-footer');
     }
 
     public function info() {
@@ -31,30 +36,50 @@ class Usuarios extends CI_Controller {
         exit();
     }
 
-    function inserir() {
-
-        /* Carrega a biblioteca do CodeIgniter responsável pela validação dos formulários */
+    function valida() {
+        //Validação
         $this->load->library('form_validation');
-
-        /* Define as tags onde a mensagem de erro será exibida na página */
         $this->form_validation->set_error_delimiters('<span>', '</span>');
-
-        /* Define as regras para validação */
         $this->form_validation->set_rules('nome', 'Nome', 'required|max_length[40]');
         $this->form_validation->set_rules('email', 'E-mail', 'trim|required|valid_email|max_length[100]');
 
-        /* Executa a validação e caso houver erro... */
-        if ($this->form_validation->run() === FALSE) {
-            /* Chama a função index do controlador */
-            $this->index();
-            /* Senão, caso sucesso na validação... */
+        return $this->form_validation->run();
+    }
+
+    function salvar() {
+        if ($this->input->post('idusuario') == FALSE) {
+            $this->inserir();
         } else {
-            /* Recebe os dados do formulário (visão) */
+            $this->atualizar();
+        }
+    }
+
+    function ver($idusuario) {
+        if ($this->session->userdata['logado'] == FALSE) {
+            redirect('login');
+        } else {
+            //Busca os dados do usuário e converte data para o formato brasileiro
+            $data['usuarios'] = $this->usuarios_model->get($idusuario);
+            $data['usuarios'][0]->dtNascimento = $this->converteDataParaPadraoBrasileiro($data['usuarios'][0]->dtNascimento);
+            $data['usuarios'][0]->dtCriacao = $this->converteDataParaPadraoBrasileiro($data['usuarios'][0]->dtCriacao);
+            $data['usuarios'][0]->dtAtualizacao = $this->converteDataParaPadraoBrasileiro($data['usuarios'][0]->dtAtualizacao);
+
+            //Abre as views 
+            $this->load->view('home-header');
+            $this->load->view('usuarios_ver', $data);
+            $this->load->view('home-footer');
+        }
+    }
+
+    function inserir() {
+        if ($this->valida() === FALSE) {
+            //Aqui deve voltar à edição...           
+        } else {
+            //Captura os dados
             $data['nome'] = $this->input->post('nome');
             $data['email'] = $this->input->post('email');
-            $data['senha'] = $this->input->post('senha');
-            $data['dtnascimento'] = $this->input->post('dtnascimento');
-            $data['foto'] = $this->input->post('foto');
+            $data['dtnascimento'] = $this->converterDataParaMySql($this->input->post('dtnascimento'));
+            $data['foto'] = $this->input->post('foto') ? $this->input->post('foto') : 'usuario.jpg';
             $data['cidade'] = $this->input->post('cidade');
             $data['estado'] = $this->input->post('estado');
             $data['bairro'] = $this->input->post('bairro');
@@ -62,86 +87,59 @@ class Usuarios extends CI_Controller {
             $data['cep'] = $this->input->post('cep');
             $data['telefone'] = $this->input->post('telefone');
             $data['celular'] = $this->input->post('celular');
+            $data['dtcriacao'] = date('Y-m-d H:i:s');            
+            $data['foto'] = $this->input->post('foto') ? md5($data['nome']) : 'usuario.jpg';
+            
+            if ($this->input->post('senha')) {
+                $data['senha'] = $this->input->post('senha');
+            }            
+            
+            $id = $this->usuarios_model->inserir($data);
 
-            //Datas
-            $data['dtcriacao'] = date('Y-m-d H:i:s');
-            $data['dtnascimento'] = $this
-             ->converterDataParaMySql($data['dtnascimento']);
-
-            /* Chama a função inserir do modelo */
-            if ($this->usuarios_model->inserir($data)) {
-                redirect('usuarios');
+            //Grava no banco de dados
+            if ($id) {
+                redirect("usuarios/ver/{$id}");
             } else {
                 log_message('error', 'Erro ao inserir o usuario.');
             }
         }
     }
+    
+    function novo() {
+        $data['usuarios'] = NULL;
+        //Abre as views
+        $this->load->view('home-header');
+        $this->load->view('usuarios_edit', $data);
+        $this->load->view('home-footer');
+    }
 
     function editar($id) {
+        if ($this->session->userdata['logado'] == FALSE) {
+            redirect('login');
+        } elseif ($this->session->userdata['idusuario'] != $id) {
+            echo '<script>window.history.back(); alert(\'Você não pode editar os dados de outro usuário.\')</script>';
+        } else {
+            //Busca os dados do usuário e converte data para o formato brasileiro
+            $data['usuarios'] = $this->usuarios_model->get($id);
+            $data['usuarios'][0]->dtNascimento = $this->converteDataParaPadraoBrasileiro($data['usuarios'][0]->dtNascimento);
 
-        /* Aqui vamos definir o título da página de edição */
-        $data['titulo'] = "CRUD com CodeIgniter | Editar Usuario";
-
-        /* Busca os dados da usuario que será editada (id) */
-        $data['dados_usuario'] = $this->usuarios_model->editar($id);
-
-        //Convertendo a data para o padrão brasileiro
-        $data['dados_usuario'][0]->dtNascimento = 
-        $this->converteDataParaPadraoBrasileiro($data['dados_usuario'][0]->dtNascimento);
-
-        /**
-         * debug is on the table
-         */
-        /*
-          echo "<pre>";
-          var_dump($data);
-          echo "</pre>";
-          die();
-         * 
-         */
-
-        /* Carrega a página de edição com os dados da usuario */
-        $this->load->view('home-header');
-        $this->load->view('home-edit', $data);
-        $this->load->view('home-footer'); 
+            //Abre as views
+            $this->load->view('home-header');
+            $this->load->view('usuarios_edit', $data);
+            $this->load->view('home-footer');
+        }
     }
 
     function atualizar() {
-
-        /* Carrega a biblioteca do CodeIgniter responsável pela validação dos formulários */
-        $this->load->library('form_validation');
-
-        /* Define as tags onde a mensagem de erro será exibida na página */
-        $this->form_validation->set_error_delimiters('<span>', '</span>');
-
-        /* Aqui estou definindo as regras de validação do formulário, assim como 
-          na função inserir do controlador, porém estou mudando a forma de escrita */
-        $validations = array(
-            array(
-                'field' => 'nome',
-                'label' => 'Nome',
-                'rules' => 'trim|required|max_length[40]'
-            ),
-            array(
-                'field' => 'email',
-                'label' => 'E-mail',
-                'rules' => 'trim|required|valid_email|max_length[100]'
-            )
-        );
-        $this->form_validation->set_rules($validations);
-
-        /* Executa a validação... */
-        if ($this->form_validation->run() === FALSE) {
-            /* Caso houver erro chama função editar do controlador novamente */
-            $this->editar($this->input->post('idusuario'));
+        if ($this->valida() === FALSE) {
+            //Aqui deve voltar à edição...           
         } else {
-            /* Senão obtém os dados do formulário */
+            //Captura os dados
             $data['idusuario'] = $this->input->post('idusuario');
-            $data['nome'] = ucwords($this->input->post('nome'));
-            $data['email'] = strtolower($this->input->post('email'));
-            $data['senha'] = $this->input->post('senha');
-            $data['dtnascimento'] = $this->input->post('dtnascimento');
-            $data['foto'] = $this->input->post('foto');
+            $data['nome'] = $this->input->post('nome');
+            $data['email'] = $this->input->post('email');
+            $data['dtnascimento'] = $this->converterDataParaMySql($this->input->post('dtnascimento'));
+            $data['foto'] = $this->input->post('foto') ? $this->input->post('foto') : 'usuario.jpg';
             $data['cidade'] = $this->input->post('cidade');
             $data['estado'] = $this->input->post('estado');
             $data['bairro'] = $this->input->post('bairro');
@@ -149,33 +147,26 @@ class Usuarios extends CI_Controller {
             $data['cep'] = $this->input->post('cep');
             $data['telefone'] = $this->input->post('telefone');
             $data['celular'] = $this->input->post('celular');
-            
-            //Pegando a data de atualização
-            $data['dtatualizacao'] = date('Y-m-d H:i:s');
-            
-            //Convertendo a data para MySQL
-            $data['dtnascimento'] = $this
-             ->converterDataParaMySql($data['dtnascimento']);
+            $data['dtcriacao'] = date('Y-m-d H:i:s');
 
-            /* Executa a função atualizar do modelo passando como parâmetro os dados obtidos do formulário */
+            if ($this->input->post('senha')) {
+                $data['senha'] = $this->input->post('senha');
+            }
+
+            //Grava no banco de dados
             if ($this->usuarios_model->atualizar($data)) {
-                /* Caso sucesso ao atualizar, recarrega a página principal */
-                redirect('usuarios');
+                redirect("usuarios/ver/{$data['idusuario']}");
             } else {
-                /* Senão exibe a mensagem de erro */
-                log_message('error', 'Erro ao atualizar o usuario.');
+                log_message('error', 'Erro ao atualizar os dados do usuario.');
             }
         }
     }
 
     function deletar($idusuario) {
-
-        /* Executa a função deletar do modelo passando como parâmetro o id da usuario */
+        //Tenta deletar o usuário e volta para a lista de usuários
         if ($this->usuarios_model->deletar($idusuario)) {
-            /* Caso sucesso ao atualizar, recarrega a página principal */
-            redirect('usuarios');
+            redirect('login/sair');
         } else {
-            /* Senão exibe a mensagem de erro */
             log_message('error', 'Erro ao deletar o usuario.');
         }
     }
@@ -207,6 +198,3 @@ class Usuarios extends CI_Controller {
     }
 
 }
-
-/* End of file usuarios.php */
-/* Location: ./application/controllers/usuarios.php */
